@@ -45,6 +45,7 @@ SOONG_CONFIG_blackironGlobalVars += \
     target_health_charging_control_supports_toggle \
     camera_uses_newer_hidl_override_format \
     uses_oplus_camera \
+    uses_oppo_camera \
     uses_nothing_camera \
     target_alternative_futex_waiters \
     target_init_vendor_lib \
@@ -92,6 +93,7 @@ SOONG_CONFIG_blackironGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CA
 SOONG_CONFIG_blackironGlobalVars_camera_needs_client_info_lib_oplus := $(TARGET_CAMERA_NEEDS_CLIENT_INFO_LIB_OPLUS)
 SOONG_CONFIG_blackironGlobalVars_camera_needs_miui_camera_mode_support := $(TARGET_USES_MIUI_CAMERA)
 SOONG_CONFIG_blackironGlobalVars_camera_needs_camera_needs_depth_sensor_override := $(TARGET_USES_DEPTHSENSOR_OVERRIDE)
+SOONG_CONFIG_blackironGlobalVars_uses_oppo_camera := $(TARGET_USES_OPPO_CAMERA)
 
 # Set default values
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
