@@ -1,8 +1,8 @@
-// Evolution X soong configs
+// Black Iron Project soong configs
 
 bootstrap_go_package {
-    name: "soong-evolution-generator",
-    pkgPath: "evolution/soong/generator",
+    name: "soong-blackiron-generator",
+    pkgPath: "blackiron/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -17,7 +17,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-evolution_generator {
+blackiron_generator {
     name: "generated_kernel_includes",
 
     // The headers make command
@@ -54,7 +54,7 @@ cc_library_headers {
 soong_config_module_type {
     name: "aapt_version_code",
     module_type: "java_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["aapt_version_code"],
     properties: ["aaptflags"],
 }
@@ -74,7 +74,7 @@ aapt_version_code {
 soong_config_module_type {
     name: "camera_uses_newer_hidl_override_format",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_uses_newer_hidl_override_format"],
     properties: [
         "cflags",
@@ -95,7 +95,7 @@ camera_uses_newer_hidl_override_format {
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["additional_gralloc_10_usage_bits"],
     properties: ["cppflags"],
 }
@@ -112,7 +112,7 @@ gralloc_10_usage_bits {
 soong_config_module_type {
     name: "gralloc_handle_custom_content_md_reserved_size",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["gralloc_handle_has_custom_content_md_reserved_size"],
     properties: ["export_cflags"],
 }
@@ -129,7 +129,7 @@ gralloc_handle_custom_content_md_reserved_size {
 soong_config_module_type {
     name: "uses_oplus_camera",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["uses_oplus_camera"],
     properties: ["cppflags"],
 }
@@ -146,7 +146,7 @@ uses_oplus_camera {
 soong_config_module_type {
     name: "uses_nothing_camera",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["uses_nothing_camera"],
     properties: ["cppflags"],
 }
@@ -163,7 +163,7 @@ uses_nothing_camera {
 soong_config_module_type {
     name: "target_alternative_futex_waiters",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["target_alternative_futex_waiters"],
     properties: ["cppflags"],
 }
@@ -180,7 +180,7 @@ target_alternative_futex_waiters {
 soong_config_module_type {
     name: "has_hh_vsync_issue",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["has_hh_vsync_issue"],
     properties: ["cppflags"],
 }
@@ -197,7 +197,7 @@ has_hh_vsync_issue {
 soong_config_module_type {
     name: "gralloc_handle_reserved_size",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["gralloc_handle_has_reserved_size"],
     properties: ["export_cflags"],
 }
@@ -214,7 +214,7 @@ gralloc_handle_reserved_size {
 soong_config_module_type {
     name: "target_shim_libs",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["target_ld_shim_libs"],
     properties: ["cppflags"],
 }
@@ -231,7 +231,7 @@ target_shim_libs {
 soong_config_module_type {
     name: "vendor_init",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["target_init_vendor_lib"],
     properties: ["whole_static_libs"],
 }
@@ -248,7 +248,7 @@ vendor_init {
 soong_config_module_type {
     name: "surfaceflinger_udfps_lib",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["target_surfaceflinger_udfps_lib"],
     properties: [
         "cppflags",
@@ -269,7 +269,7 @@ surfaceflinger_udfps_lib {
 soong_config_module_type {
     name: "target_uses_prebuilt_dynamic_partitions",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["target_uses_prebuilt_dynamic_partitions"],
     properties: ["cppflags"],
 }
@@ -287,7 +287,7 @@ target_uses_prebuilt_dynamic_partitions {
 soong_config_module_type {
     name: "camera_needs_client_info",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_needs_client_info"],
     properties: ["cppflags"],
 }
@@ -304,7 +304,7 @@ camera_needs_client_info {
 soong_config_module_type {
     name: "camera_needs_client_info_lib",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_needs_client_info_lib"],
     properties: [
         "cppflags",
@@ -325,7 +325,7 @@ camera_needs_client_info_lib {
 soong_config_module_type {
     name: "camera_needs_client_info_lib_oplus",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_needs_client_info_lib_oplus"],
     properties: [
         "cppflags",
@@ -346,7 +346,7 @@ camera_needs_client_info_lib_oplus {
 soong_config_module_type {
     name: "no_cameraserver",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["has_legacy_camera_hal1"],
     properties: [
         "cppflags",
@@ -368,7 +368,7 @@ no_cameraserver {
 soong_config_module_type {
     name: "camera_in_mediaserver",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["has_legacy_camera_hal1"],
     properties: [
         "overrides",
@@ -397,7 +397,7 @@ camera_in_mediaserver {
 soong_config_module_type {
     name: "camera_parameter_library",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["uses_camera_parameter_lib"],
     properties: ["whole_static_libs"],
 }
@@ -414,7 +414,7 @@ camera_parameter_library {
 soong_config_module_type {
     name: "bootloader_message_offset",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["bootloader_message_offset"],
     properties: [
         "cflags",
@@ -435,7 +435,7 @@ bootloader_message_offset {
 soong_config_module_type {
     name: "egl_display_array",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["uses_egl_display_array"],
     properties: ["cflags"],
 }
@@ -452,7 +452,7 @@ egl_display_array {
 soong_config_module_type {
     name: "disable_bluetooth_le_read_buffer_size_v2",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["disable_bluetooth_le_read_buffer_size_v2"],
     properties: ["cppflags"],
 }
@@ -469,7 +469,7 @@ disable_bluetooth_le_read_buffer_size_v2 {
 soong_config_module_type {
     name: "disable_bluetooth_le_set_host_feature",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["disable_bluetooth_le_set_host_feature"],
     properties: ["cppflags"],
 }
@@ -487,7 +487,7 @@ disable_bluetooth_le_set_host_feature {
 soong_config_module_type {
     name: "librmnetctl_pre_uplink",
     module_type: "cc_defaults",
-    config_namespace: "evolutionQcomVars",
+    config_namespace: "blackironQcomVars",
     bool_variables: ["uses_pre_uplink_features_netmgrd"],
     properties: ["cflags"],
 }
@@ -504,7 +504,7 @@ librmnetctl_pre_uplink {
 soong_config_module_type {
     name: "qti_camera_device",
     module_type: "cc_defaults",
-    config_namespace: "evolutionQcomVars",
+    config_namespace: "blackironQcomVars",
     bool_variables: ["uses_qti_camera_device"],
     properties: [
         "cppflags",
@@ -525,7 +525,7 @@ qti_camera_device {
 soong_config_module_type {
     name: "extended_compress_format",
     module_type: "cc_defaults",
-    config_namespace: "evolutionQcomVars",
+    config_namespace: "blackironQcomVars",
     bool_variables: ["supports_extended_compress_format"],
     properties: ["cflags"],
 }
@@ -542,7 +542,7 @@ extended_compress_format {
 soong_config_module_type {
     name: "surfaceflinger_qcom_extensions",
     module_type: "cc_defaults",
-    config_namespace: "evolutionQcomVars",
+    config_namespace: "blackironQcomVars",
     value_variables: ["qcom_display_headers_namespace"],
     properties: [
         "cppflags",
@@ -563,7 +563,7 @@ surfaceflinger_qcom_extensions {
 soong_config_module_type {
     name: "inputdispatcher_skip_event_key",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     value_variables: ["target_inputdispatcher_skip_event_key"],
     properties: ["cppflags"],
 }
@@ -580,7 +580,7 @@ inputdispatcher_skip_event_key {
 soong_config_module_type {
     name: "needs_oplus_tag",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["needs_oplus_tag"],
     properties: ["cppflags"],
 }
@@ -596,7 +596,7 @@ needs_oplus_tag {
 soong_config_module_type {
     name: "include_miui_camera",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["include_miui_camera"],
     properties: ["cppflags"],
 }
@@ -612,7 +612,7 @@ include_miui_camera {
 soong_config_module_type {
     name: "needs_camera_boottime",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["needs_camera_boottime"],
     properties: ["cppflags"],
 }
@@ -629,7 +629,7 @@ needs_camera_boottime {
 soong_config_module_type {
     name: "camera_needs_miui_camera_mode_support",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_needs_miui_camera_mode_support"],
     properties: ["cppflags"],
 }
@@ -646,7 +646,7 @@ camera_needs_miui_camera_mode_support {
 soong_config_module_type {
     name: "camera_needs_camera_needs_depth_sensor_override",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["camera_needs_camera_needs_depth_sensor_override"],
     properties: ["cppflags"],
 }
@@ -663,7 +663,7 @@ camera_needs_camera_needs_depth_sensor_override {
 soong_config_module_type {
     name: "uses_oppo_camera",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: ["uses_oppo_camera"],
     properties: ["cppflags"],
 }
@@ -680,7 +680,7 @@ uses_oppo_camera {
 soong_config_module_type {
     name: "health_charging_control",
     module_type: "cc_defaults",
-    config_namespace: "evolutionGlobalVars",
+    config_namespace: "blackironGlobalVars",
     bool_variables: [
         "target_health_charging_control_supports_toggle",
         "target_health_charging_control_supports_bypass",

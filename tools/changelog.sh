@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exports
-DEVICE=$(echo $TARGET_PRODUCT | sed 's/evolution_//g')
+DEVICE=$(echo $TARGET_PRODUCT | sed 's/blackiron_//g')
 out=$OUT_DIR/target/product/$DEVICE
 if [ -f $out ]; # The path does not exist
 then
@@ -17,7 +17,7 @@ then
 fi
 
 # Assuming this script is run from TOP of workspace
-export formatter_script=$(realpath vendor/evolution/tools/changelog_repo_formatter.sh)
+export formatter_script=$(realpath vendor/blackiron/tools/changelog_repo_formatter.sh)
 
 touch $Changelog
 

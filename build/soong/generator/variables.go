@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func evolutionExpandVariables(ctx android.ModuleContext, in string) string {
-	evolutionVars := ctx.Config().VendorConfig("evolutionVarsPlugin")
+func blackironExpandVariables(ctx android.ModuleContext, in string) string {
+	blackironVars := ctx.Config().VendorConfig("blackironVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if evolutionVars.IsSet(name) {
-			return evolutionVars.String(name), nil
+		if blackironVars.IsSet(name) {
+			return blackironVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

@@ -96,5 +96,5 @@ PRODUCT_PACKAGES += \
 
 # Register vendor fonts
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/evolution/prebuilt/product/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-    vendor/evolution/prebuilt/product/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    $(call find-copy-subdir-files,*,vendor/blackiron/prebuilt/product/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/blackiron/prebuilt/product/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml

@@ -1,5 +1,5 @@
-# Inherit full common Evolution X stuff
-$(call inherit-product, vendor/evolution/config/common_full.mk)
+# Inherit full common Black Iron Project stuff
+$(call inherit-product, vendor/blackiron/config/common_full.mk)
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -19,4 +19,4 @@ $(call inherit-product, vendor/gms/gms_full.mk)
 endif
 
 # Inherit from telephony config
-$(call inherit-product, vendor/evolution/config/telephony.mk)
+$(call inherit-product, vendor/blackiron/config/telephony.mk)

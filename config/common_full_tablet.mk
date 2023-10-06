@@ -1,7 +1,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 
-# Inherit full common Evolution X stuff
-$(call inherit-product, vendor/evolution/config/common_full.mk)
+# Inherit full common Black Iron Project stuff
+$(call inherit-product, vendor/blackiron/config/common_full.mk)
 
 # Inherit from GMS product config
 ifeq ($(TARGET_USES_MINI_GAPPS),true)
@@ -12,4 +12,4 @@ else
 $(call inherit-product, vendor/gms/gms_full.mk)
 endif
 
-$(call inherit-product, vendor/evolution/config/telephony.mk)
+$(call inherit-product, vendor/blackiron/config/telephony.mk)

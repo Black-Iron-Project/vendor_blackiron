@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-# Evolution X Overlays
+# Black Iron Project Overlays
 PRODUCT_PACKAGES += \
-    EvolutionXConfigOverlay \
+    BlackironConfigOverlay \
     ImmersiveNavigationOverlay \
     NetworkStackOverlay \
     NexusLauncherResOverlay \
-    PixelSetupWizardOverlayEvolutionX
+    PixelSetupWizardOverlayBlackiron
 
 # Google Overlays
 PRODUCT_PACKAGES += \

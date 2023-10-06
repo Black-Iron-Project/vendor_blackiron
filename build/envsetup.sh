@@ -1,13 +1,13 @@
 function __print_evo_functions_help() {
 cat <<EOF
-Additional Evolution X functions:
+Additional Black Iron functions:
 - cout:            Changes directory to out.
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
 - aospremote:      Add git remote for matching AOSP repository.
 - cloremote:       Add git remote for matching CodeLinaro repository.
-- githubremote:    Add git remote for Evolution X Github.
+- githubremote:    Add git remote for Black Iron Github.
 - mka:             Builds using SCHED_BATCH on all processors.
 - mkap:            Builds the module(s) using mka and pushes them to the device.
 - cmka:            Cleans and builds using mka.
@@ -54,7 +54,7 @@ function brunch()
 {
     breakfast $*
     if [ $? -eq 0 ]; then
-        mka evolution
+        mka blackiron
     else
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
@@ -80,7 +80,7 @@ function breakfast()
                 variant="userdebug"
             fi
 
-            lunch evolution_$target-$variant
+            lunch blackiron_$target-$variant
         fi
     fi
     return $?
@@ -91,7 +91,7 @@ alias bib=breakfast
 function eat()
 {
     if [ "$OUT" ] ; then
-        ZIPPATH=`ls -tr "$OUT"/EvolutionX-*.zip | tail -1`
+        ZIPPATH=`ls -tr "$OUT"/Blackiron-*.zip | tail -1`
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
             return 1
@@ -99,13 +99,13 @@ function eat()
         echo "Waiting for device..."
         adb wait-for-device-recovery
         echo "Found device"
-        if (adb shell getprop org.evolution.device | grep -q "$EVOLUTION_BUILD"); then
+        if (adb shell getprop org.blackiron.device | grep -q "$BLACKIRON_BUILD"); then
             echo "Rebooting to sideload for install"
             adb reboot sideload-auto-reboot
             adb wait-for-sideload
             adb sideload $ZIPPATH
         else
-            echo "The connected device does not appear to be $EVOLUTION_BUILD, run away!"
+            echo "The connected device does not appear to be $BLACKIRON_BUILD, run away!"
         fi
         return $?
     else
@@ -300,7 +300,7 @@ function githubremote()
 
     local PROJECT=$(echo $REMOTE | sed -e "s#platform/#android/#g; s#/#_#g")
 
-    git remote add github https://github.com/Evolution-X/$PROJECT
+    git remote add github https://github.com/Black-Iron-Project/$PROJECT
     echo "Remote 'github' created"
 }
 
@@ -331,14 +331,14 @@ function installboot()
     adb wait-for-device-recovery
     adb root
     adb wait-for-device-recovery
-    if (adb shell getprop org.evolution.device | grep -q "$EVOLUTION_BUILD");
+    if (adb shell getprop org.blackiron.device | grep -q "$BLACKIRON_BUILD");
     then
         adb push $OUT/boot.img /cache/
         adb shell dd if=/cache/boot.img of=$PARTITION
         adb shell rm -rf /cache/boot.img
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $EVOLUTION_BUILD, run away!"
+        echo "The connected device does not appear to be $BLACKIRON_BUILD, run away!"
     fi
 }
 
@@ -369,14 +369,14 @@ function installrecovery()
     adb wait-for-device-recovery
     adb root
     adb wait-for-device-recovery
-    if (adb shell getprop org.evolution.device | grep -q "$EVOLUTION_BUILD");
+    if (adb shell getprop org.blackiron.device | grep -q "$BLACKIRON_BUILD");
     then
         adb push $OUT/recovery.img /cache/
         adb shell dd if=/cache/recovery.img of=$PARTITION
         adb shell rm -rf /cache/recovery.img
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $EVOLUTION_BUILD, run away!"
+        echo "The connected device does not appear to be $BLACKIRON_BUILD, run away!"
     fi
 }
 
@@ -404,7 +404,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                evolution|otapackage|systemimage)
+                blackiron|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
@@ -468,7 +468,7 @@ function dopush()
         echo "Device Found."
     fi
 
-    if (adb shell getprop org.evolution.device | grep -q "$EVOLUTION_BUILD") || [ "$FORCE_PUSH" = "true" ];
+    if (adb shell getprop org.blackiron.device | grep -q "$BLACKIRON_BUILD") || [ "$FORCE_PUSH" = "true" ];
     then
     # retrieve IP and PORT info if we're using a TCP connection
     TCPIPPORT=$(adb devices \
@@ -587,7 +587,7 @@ EOF
     rm -f $OUT/.log
     return 0
     else
-        echo "The connected device does not appear to be $EVOLUTION_BUILD, run away!"
+        echo "The connected device does not appear to be $BLACKIRON_BUILD, run away!"
     fi
 }
 
@@ -600,7 +600,7 @@ alias cmkap='dopush cmka'
 
 function repopick() {
     T=$(gettop)
-    $T/vendor/evolution/build/tools/repopick.py $@
+    $T/vendor/blackiron/build/tools/repopick.py $@
 }
 
 function sort-blobs-list() {

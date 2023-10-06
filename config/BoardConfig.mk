@@ -1,10 +1,10 @@
-include vendor/evolution/config/BoardConfigKernel.mk
+include vendor/blackiron/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/evolution/config/BoardConfigQcom.mk
+include vendor/blackiron/config/BoardConfigQcom.mk
 endif
 
-include vendor/evolution/config/BoardConfigSoong.mk
+include vendor/blackiron/config/BoardConfigSoong.mk
 
 # Namespace for fwk-detect
 TARGET_FWK_DETECT_PATH ?= hardware/qcom-caf/common

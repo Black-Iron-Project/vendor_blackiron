@@ -362,7 +362,7 @@
     <icon drawable="@drawable/themed_icon_etabib" name="MISSING" package="az.gov.etabib"/>
     <icon drawable="@drawable/themed_icon_eventbrite" name="Eventbrite" package="com.eventbrite.attendee"/>
     <icon drawable="@drawable/themed_icon_evernote" name="Evernote" package="com.evernote"/>
-    <icon drawable="@drawable/themed_icon_evoxpapers" name="MISSING" package="org.evolutionx.papers"/>
+    <icon drawable="@drawable/themed_icon_evoxpapers" name="MISSING" package="org.blackiron.papers"/>
     <icon drawable="@drawable/themed_icon_express_vpn" name="ExpressVPN" package="com.expressvpn.vpn"/>
     <icon drawable="@drawable/themed_icon_exteragram" name="MISSING" package="com.exteragram.messenger"/>
     <icon drawable="@drawable/themed_icon_exteragram" name="MISSING" package="com.exteragram.messenger.beta"/>

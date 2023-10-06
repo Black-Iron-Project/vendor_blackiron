@@ -2,7 +2,7 @@
 # Copyright (C) 2018-2019 The Pixel3ROM Project
 # Copyright (C) 2020 Raphielscape LLC. and Haruka LLC.
 # Copyright (C) 2021 Haruka Aita
-# Copyright (C) 2021 The Evolution X Project
+# Copyright (C) 2021 The Black Iron Project Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ $(OTA_PACKAGE_TARGET): $(BRO)
 
 $(OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 		build/tools/releasetools/ota_from_target_files.py
-	@echo "evolution: $@"
+	@echo "blackiron: $@"
 	    $(OTA_FROM_TARGET_FILES) --verbose \
 	    --block \
 	    -p $(OUT_DIR)/host/linux-x86 \
@@ -32,15 +32,15 @@ $(OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 
 	$(hide) $(MD5SUM) $(OTA_PACKAGE_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(OTA_PACKAGE_TARGET).md5sum
 	@echo "Creating json OTA..."
-	$(hide) ./vendor/evolution/tools/generate_json_build_info.sh $(OTA_PACKAGE_TARGET)
+	$(hide) ./vendor/blackiron/tools/generate_json_build_info.sh $(OTA_PACKAGE_TARGET)
 	@echo "Generating changelog for unsigned"
-	$(hide) ./vendor/evolution/tools/changelog.sh
+	$(hide) ./vendor/blackiron/tools/changelog.sh
 	$(hide) mv Changelog.txt $(OTA_PACKAGE_TARGET).txt
 
-.PHONY: evolution
-evolution: otatools brillo_update_payload checkvintf $(OTA_PACKAGE_TARGET)
+.PHONY: blackiron
+blackiron: otatools brillo_update_payload checkvintf $(OTA_PACKAGE_TARGET)
 
-	$(hide) ./vendor/evolution/build/tasks/ascii_output.sh
+	$(hide) ./vendor/blackiron/build/tasks/ascii_output.sh
 
 endif
 
@@ -69,7 +69,7 @@ $(PROD_OTA_PACKAGE_TARGET): $(BRO)
 
 $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 		build/tools/releasetools/ota_from_target_files.py
-	@echo "evolution production: $@"
+	@echo "blackiron production: $@"
 	    $(OTA_FROM_TARGET_FILES) --verbose \
 	    --block \
 	    -p $(OUT_DIR)/host/linux-x86 \
@@ -78,13 +78,13 @@ $(PROD_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 
 	$(hide) $(MD5SUM) $(PROD_OTA_PACKAGE_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(PROD_OTA_PACKAGE_TARGET).md5sum
 	@echo "Creating json OTA..."
-	$(hide) ./vendor/evolution/tools/generate_json_build_info.sh $(PROD_OTA_PACKAGE_TARGET)
+	$(hide) ./vendor/blackiron/tools/generate_json_build_info.sh $(PROD_OTA_PACKAGE_TARGET)
 	@echo "Generating changelog for production"
-	$(hide) ./vendor/evolution/tools/changelog.sh
+	$(hide) ./vendor/blackiron/tools/changelog.sh
 	$(hide) mv Changelog.txt $(PROD_OTA_PACKAGE_TARGET).txt
 
-.PHONY: evolution-prod
-evolution-prod: otatools brillo_update_payload checkvintf $(PROD_OTA_PACKAGE_TARGET)
+.PHONY: blackiron-prod
+blackiron-prod: otatools brillo_update_payload checkvintf $(PROD_OTA_PACKAGE_TARGET)
 
 GEN_CHANGELOG := $(PROD_OTA_PACKAGE_TARGET).txt
 
@@ -92,7 +92,7 @@ $(GEN_CHANGELOG): $(BRO)
 
 $(GEN_CHANGELOG):
 	@echo "Generating changelog for production"
-	$(hide) ./vendor/evolution/tools/changelog.sh
+	$(hide) ./vendor/blackiron/tools/changelog.sh
 	$(hide) mv Changelog.txt $(PROD_OTA_PACKAGE_TARGET).txt
 
 .PHONY: gen-changelog
@@ -108,7 +108,7 @@ $(INCREMENTAL_OTA_PACKAGE_TARGET): $(BRO)
 
 $(INCREMENTAL_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 		build/tools/releasetools/ota_from_target_files.py
-	@echo "evolution incremental production: $@"
+	@echo "blackiron incremental production: $@"
 	    $(OTA_FROM_TARGET_FILES) --verbose \
 	    --block \
 	    -p $(OUT_DIR)/host/linux-x86 \
@@ -118,7 +118,7 @@ $(INCREMENTAL_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 
 	$(hide) $(MD5SUM) $(INCREMENTAL_OTA_PACKAGE_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INCREMENTAL_OTA_PACKAGE_TARGET).md5sum
 	@echo "Creating json OTA..."
-	$(hide) ./vendor/evolution/tools/generate_json_build_info.sh $(INCREMENTAL_OTA_PACKAGE_TARGET)
+	$(hide) ./vendor/blackiron/tools/generate_json_build_info.sh $(INCREMENTAL_OTA_PACKAGE_TARGET)
 
 .PHONY: incremental-ota
 incremental-ota: otatools brillo_update_payload checkvintf $(INCREMENTAL_OTA_PACKAGE_TARGET)
@@ -135,7 +135,7 @@ $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET): $(BRO)
 
 $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 		build/tools/releasetools/ota_from_target_files.py
-	@echo "evolution stable incremental production: $@"
+	@echo "blackiron stable incremental production: $@"
 	    $(OTA_FROM_TARGET_FILES) --verbose \
 	    --block \
 	    -p $(OUT_DIR)/host/linux-x86 \
@@ -145,7 +145,7 @@ $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET): $(SIGNED_TARGET_FILES_PACKAGE) \
 
 	$(hide) $(MD5SUM) $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET).md5sum
 	@echo "Creating json OTA..."
-	$(hide) ./vendor/evolution/tools/generate_json_build_info.sh $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET)
+	$(hide) ./vendor/blackiron/tools/generate_json_build_info.sh $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET)
 
 .PHONY: stable-ota
 stable-ota: brillo_update_payload checkvintf $(INCREMENTAL_STABLE_OTA_PACKAGE_TARGET)

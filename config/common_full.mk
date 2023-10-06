@@ -1,4 +1,4 @@
-# Inherit common Evolution X stuff
-$(call inherit-product, vendor/evolution/config/common.mk)
+# Inherit common Black Iron Project stuff
+$(call inherit-product, vendor/blackiron/config/common.mk)
 
 PRODUCT_SIZE := full

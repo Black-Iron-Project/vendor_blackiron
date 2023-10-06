@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= EvolutionX
+PRODUCT_BRAND ?= Blackiron
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -98,30 +98,30 @@ endif
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     sys.fflag.override.settings_volume_panel_in_systemui=true
 
-# Evolution X-specific broadcast actions whitelist
+# Black Iron Project-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/evolution/config/permissions/evolution-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/evolution-sysconfig.xml
+    vendor/blackiron/config/permissions/blackiron-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/blackiron-sysconfig.xml
 
-# Copy all Evolution X-specific init rc files
+# Copy all Black Iron Project-specific init rc files
 #PRODUCT_COPY_FILES += \
-#    vendor/evolution/prebuilt/common/etc/init/init.evolution-x-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.evolution-x-updater.rc
+#    vendor/blackiron/prebuilt/common/etc/init/init.blackiron-x-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.blackiron-x-updater.rc
 
 # Extra Permissions
 PRODUCT_COPY_FILES += \
-    vendor/evolution/config/permissions/privapp-permissions-evolution.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-evolution.xml
+    vendor/blackiron/config/permissions/privapp-permissions-blackiron.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-blackiron.xml
 
 # LineageHW permission
 PRODUCT_COPY_FILES += \
-    vendor/evolution/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
+    vendor/blackiron/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
 
 # Permissions for lineage sdk services
 PRODUCT_COPY_FILES += \
-    vendor/evolution/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml \
-    vendor/evolution/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.livedisplay.xml
+    vendor/blackiron/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml \
+    vendor/blackiron/config/permissions/org.lineageos.livedisplay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.livedisplay.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/evolution/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.nfc.beam.xml
+    vendor/blackiron/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -130,7 +130,7 @@ PRODUCT_COPY_FILES += \
 # Keylayout
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_045e_Product_0719.kl \
-    vendor/evolution/misc/keylayout/Vendor_2dc8_Product_6006.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_2dc8_Product_6006.kl
+    vendor/blackiron/misc/keylayout/Vendor_2dc8_Product_6006.kl:$(TARGET_COPY_OUT_PRODUCT)/usr/keylayout/Vendor_2dc8_Product_6006.kl
 
 # Enable transitional log for Privileged permissions
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -138,7 +138,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Clean up packages cache to avoid wrong strings and resources
 PRODUCT_COPY_FILES += \
-    vendor/evolution/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+    vendor/blackiron/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 # Support many users/work profiles
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -191,7 +191,7 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
-# Evolution X customization
+# Black Iron Project customization
 TARGET_IS_PIXEL ?= false
 TARGET_IS_PIXEL_6 ?= false
 TARGET_IS_PIXEL_7 ?= false
@@ -233,9 +233,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false
 
 # Overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/evolution/overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/blackiron/overlay
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/evolution/overlay/common
+    vendor/blackiron/overlay/common
 
 # Anything including updatable_apex.mk should have done so by now.
 ifeq ($(TARGET_FLATTEN_APEX), false)
@@ -245,34 +245,34 @@ $(call inherit-product-if-exists, vendor/partner_modules/build/mainline_modules_
 endif
 
 # Inherit from audio config
-$(call inherit-product, vendor/evolution/config/audio.mk)
+$(call inherit-product, vendor/blackiron/config/audio.mk)
 
 # Inherit from bootanimation config
-$(call inherit-product, vendor/evolution/config/bootanimation.mk)
+$(call inherit-product, vendor/blackiron/config/bootanimation.mk)
 
 # Inherit from fonts config
-$(call inherit-product, vendor/evolution/config/fonts.mk)
+$(call inherit-product, vendor/blackiron/config/fonts.mk)
 
 # Inherit from gfonts config
-$(call inherit-product, vendor/evolution/config/gfonts.mk)
+$(call inherit-product, vendor/blackiron/config/gfonts.mk)
 
 # Inherit from our ota config
-#$(call inherit-product, vendor/evolution/config/ota.mk)
+#$(call inherit-product, vendor/blackiron/config/ota.mk)
 
 # Inherit from packages config
-$(call inherit-product, vendor/evolution/config/packages.mk)
+$(call inherit-product, vendor/blackiron/config/packages.mk)
 
 # Inherit from rro_overlays config
-$(call inherit-product, vendor/evolution/config/rro_overlays.mk)
+$(call inherit-product, vendor/blackiron/config/rro_overlays.mk)
 
 # Inherit from textclassifier config
-$(call inherit-product, vendor/evolution/config/textclassifier.mk)
+$(call inherit-product, vendor/blackiron/config/textclassifier.mk)
 
 # Inherit from themes config
-#$(call inherit-product, vendor/evolution/config/themes.mk)
+#$(call inherit-product, vendor/blackiron/config/themes.mk)
 
 # Inherit from our version config
-$(call inherit-product, vendor/evolution/config/version.mk)
+$(call inherit-product, vendor/blackiron/config/version.mk)
 
 # Pixel Framework
 #$(call inherit-product, vendor/pixel-framework/config.mk)

@@ -3,7 +3,7 @@ if [ "$1" ]
 then
   file_path=$1
   file_name=$(basename "$file_path")
-  DEVICE=$(echo $TARGET_PRODUCT | sed 's/evolution_//g')
+  DEVICE=$(echo $TARGET_PRODUCT | sed 's/blackiron_//g')
   if [ -f $file_path ]; then
     file_size=$(stat -c%s $file_path)
     md5=$(cat "$file_path.md5sum" | cut -d' ' -f1)
