@@ -4,16 +4,9 @@ ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.clientidbase=android-google
-
 else
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-
 endif
 
 # Gboard configuration
@@ -40,11 +33,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # OPA configuration
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
-
-# Google Play services configuration
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.error.receiver.system.apps=com.google.android.gms \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent
 
 # CarrierSetup configuration
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -273,15 +261,6 @@ $(call inherit-product, vendor/blackiron/config/textclassifier.mk)
 
 # Inherit from our version config
 $(call inherit-product, vendor/blackiron/config/version.mk)
-
-# Inherit from GMS product config
-ifeq ($(TARGET_USES_MINI_GAPPS),true)
-$(call inherit-product, vendor/gms/gms_mini.mk)
-else ifeq ($(TARGET_USES_PICO_GAPPS),true)
-$(call inherit-product, vendor/gms/gms_pico.mk)
-else
-$(call inherit-product, vendor/gms/gms_full.mk)
-endif
 
 # Pixel Framework
 #$(call inherit-product, vendor/pixel-framework/config.mk)
