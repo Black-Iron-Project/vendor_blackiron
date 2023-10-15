@@ -1,4 +1,4 @@
-# Inherit mini common DerpFest stuff
-$(call inherit-product, vendor/derp/config/common_mobile.mk)
+# Inherit mini common Blackiron stuff
+$(call inherit-product, vendor/blackiron/config/common_mobile.mk)
 
 PRODUCT_SIZE := mini

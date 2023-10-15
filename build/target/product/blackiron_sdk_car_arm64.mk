@@ -1,5 +1,5 @@
 # Copyright (C) 2018-2020 The LineageOS Project
-# Copyright (C) 2021 DerpFest
+# Copyright (C) 2021 Blackiron
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/derp/build/target/product/derp_generic_car_target.mk
+include vendor/blackiron/build/target/product/blackiron_generic_car_target.mk
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/sdk_x86_64.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/sdk_arm64.mk)
 
-PRODUCT_NAME := derp_sdk_car_x86_64
+TARGET_NO_KERNEL_OVERRIDE := true
+
+PRODUCT_NAME := blackiron_sdk_car_arm64

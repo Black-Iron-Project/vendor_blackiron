@@ -15,29 +15,29 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_gsi_arm.mk \
-    $(LOCAL_DIR)/derp_gsi_arm64.mk \
-    $(LOCAL_DIR)/derp_gsi_x86.mk \
-    $(LOCAL_DIR)/derp_gsi_x86_64.mk \
-    $(LOCAL_DIR)/derp_tv_arm.mk \
-    $(LOCAL_DIR)/derp_tv_arm64.mk \
-    $(LOCAL_DIR)/derp_tv_x86.mk \
-    $(LOCAL_DIR)/derp_tv_x86_64.mk \
-    $(LOCAL_DIR)/derp_sdk_car_arm64.mk \
-    $(LOCAL_DIR)/derp_sdk_car_x86_64.mk \
-    $(LOCAL_DIR)/derp_sdk_phone_x86.mk \
-    $(LOCAL_DIR)/derp_sdk_phone_x86_64.mk
+    $(LOCAL_DIR)/blackiron_gsi_arm.mk \
+    $(LOCAL_DIR)/blackiron_gsi_arm64.mk \
+    $(LOCAL_DIR)/blackiron_gsi_x86.mk \
+    $(LOCAL_DIR)/blackiron_gsi_x86_64.mk \
+    $(LOCAL_DIR)/blackiron_tv_arm.mk \
+    $(LOCAL_DIR)/blackiron_tv_arm64.mk \
+    $(LOCAL_DIR)/blackiron_tv_x86.mk \
+    $(LOCAL_DIR)/blackiron_tv_x86_64.mk \
+    $(LOCAL_DIR)/blackiron_sdk_car_arm64.mk \
+    $(LOCAL_DIR)/blackiron_sdk_car_x86_64.mk \
+    $(LOCAL_DIR)/blackiron_sdk_phone_x86.mk \
+    $(LOCAL_DIR)/blackiron_sdk_phone_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_gsi_arm-userdebug \
-    derp_gsi_arm64-userdebug \
-    derp_gsi_x86-userdebug \
-    derp_gsi_x86_64-userdebug \
-    derp_tv_arm-userdebug \
-    derp_tv_arm64-userdebug \
-    derp_tv_x86-userdebug \
-    derp_tv_x86_64-userdebug \
-    derp_sdk_car_arm64-userdebug \
-    derp_sdk_car_x86_64-userdebug \
-    derp_sdk_phone_x86-userdebug \
-    derp_sdk_phone_x86_64-userdebug
+    blackiron_gsi_arm-userdebug \
+    blackiron_gsi_arm64-userdebug \
+    blackiron_gsi_x86-userdebug \
+    blackiron_gsi_x86_64-userdebug \
+    blackiron_tv_arm-userdebug \
+    blackiron_tv_arm64-userdebug \
+    blackiron_tv_x86-userdebug \
+    blackiron_tv_x86_64-userdebug \
+    blackiron_sdk_car_arm64-userdebug \
+    blackiron_sdk_car_x86_64-userdebug \
+    blackiron_sdk_phone_x86-userdebug \
+    blackiron_sdk_phone_x86_64-userdebug

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Derp Themes</string>
+    <string name="app_name">Blackiron Themes</string>
 
     <!-- Side A colors -->
     <string name="default_color_name">@*android:string/system_locale_title</string>

@@ -1,7 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_BRAND ?= DerpFest
+PRODUCT_BRAND ?= Blackiron
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -27,18 +27,18 @@ endif
 # Backup Tool
 ifneq ($(TARGET_EXCLUDE_BACKUPTOOL),true)
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/derp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/derp/prebuilt/common/bin/50-derp.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-derp.sh
+    vendor/blackiron/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/blackiron/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/blackiron/prebuilt/common/bin/50-blackiron.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-blackiron.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
-    system/addon.d/50-derp.sh
+    system/addon.d/50-blackiron.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/derp/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/derp/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/blackiron/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/blackiron/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/blackiron/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/backuptool_ab.sh \
@@ -52,13 +52,13 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.ota.allow_downgrade=true
 endif
 
-# DerpFest-specific init rc file
+# Blackiron-specific init rc file
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/etc/init/init.derp-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.derp-system_ext.rc
+    vendor/blackiron/prebuilt/common/etc/init/init.blackiron-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.blackiron-system_ext.rc
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/derp/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/blackiron/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -78,21 +78,21 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     fw.max_users=32
 
 # Include AOSP audio files
-include vendor/derp/config/aosp_audio.mk
+include vendor/blackiron/config/aosp_audio.mk
 
-# Include DerpFest audio files
-include vendor/derp/config/derp_audio.mk
+# Include Blackiron audio files
+include vendor/blackiron/config/blackiron_audio.mk
 
 # Include extra packages
-include vendor/derp/config/packages.mk
+include vendor/blackiron/config/packages.mk
 
 # Permissions for Google product apps
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/etc/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
+    vendor/blackiron/prebuilt/common/etc/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
 
 # Livedisplay
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/etc/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
+    vendor/blackiron/prebuilt/common/etc/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
 
 # Strip the local variable table and the local variable type table to reduce
 # the size of the system image. This has no bearing on stack traces, but will
@@ -111,10 +111,10 @@ TARGET_SCREEN_WIDTH ?= 1080
 TARGET_SCREEN_HEIGHT ?= 1920
 
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/etc/init/init.derp-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.derp-updater.rc
+    vendor/blackiron/prebuilt/common/etc/init/init.blackiron-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.blackiron-updater.rc
 
 PRODUCT_COPY_FILES += \
-    vendor/derp/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
+    vendor/blackiron/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # Storage manager
 PRODUCT_SYSTEM_PROPERTIES += \
@@ -157,7 +157,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI \
-    DerpLauncher
+    BlackironLauncher
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
@@ -166,18 +166,18 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.sys.disable_rescue=true
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/derp/overlay/no-rro
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/blackiron/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/derp/overlay/common \
-    vendor/derp/overlay/no-rro
+    vendor/blackiron/overlay/common \
+    vendor/blackiron/overlay/no-rro
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
 # Art
-include vendor/derp/config/art.mk
+include vendor/blackiron/config/art.mk
 
 # Versioning
-include vendor/derp/config/version.mk
+include vendor/blackiron/config/version.mk
 
 # GApps
 WITH_GMS := true

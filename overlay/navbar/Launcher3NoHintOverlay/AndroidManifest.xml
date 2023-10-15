@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.derpfest.overlay.customization.launcher3.nohint"
+    package="org.blackiron.overlay.customization.launcher3.nohint"
     android:versionCode="1"
     android:versionName="1.0">
     <overlay android:targetPackage="com.android.launcher3" android:priority="1" />

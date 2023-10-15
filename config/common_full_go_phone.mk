@@ -1,5 +1,5 @@
-# Set DerpFest specific identifier for Android Go enabled products
+# Set Blackiron specific identifier for Android Go enabled products
 PRODUCT_TYPE := go
 
-# Inherit full common DerpFest stuff
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Inherit full common Blackiron stuff
+$(call inherit-product, vendor/blackiron/config/common_full_phone.mk)

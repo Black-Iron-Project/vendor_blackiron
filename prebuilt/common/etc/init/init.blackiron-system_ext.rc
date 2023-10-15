@@ -1,4 +1,4 @@
-# DerpFest core functionality
+# Blackiron core functionality
 on init
     export TERMINFO /system_ext/etc/terminfo
 

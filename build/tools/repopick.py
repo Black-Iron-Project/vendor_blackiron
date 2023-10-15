@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2013-15 The CyanogenMod Project
 #           (C) 2017    The LineageOS Project
-#           (C) 2021    DerpFest
+#           (C) 2021    Blackiron
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -143,12 +143,12 @@ def fetch_query(remote_url, query):
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
 
 if __name__ == '__main__':
-    # Default to DerpFest Gerrit
-    default_gerrit = 'https://review.derpfest.org'
+    # Default to Blackiron Gerrit
+    default_gerrit = 'https://review.blackiron.org'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
-        patches from DerpFest's Gerrit instance (or any gerrit instance of your choosing)
+        patches from Blackiron's Gerrit instance (or any gerrit instance of your choosing)
 
         Given a list of change numbers, repopick will cd into the project path
         and cherry pick the latest patch available.
@@ -456,9 +456,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit derp', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit blackiron', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch derp', item['fetch'][method]['ref']]
+                cmd = ['git fetch blackiron', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:

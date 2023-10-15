@@ -15,7 +15,7 @@ if [[ -f $file_path ]]; then
         file_size=$(stat -c %s "$file_path")
         sha256=$(cut -d' ' -f1 "$file_path".sha256sum)
         datetime=$(grep -w ro\\.build\\.date\\.utc "$buildprop" | cut -d= -f2)
-        link=https://sourceforge.net/projects/derpfest/files/$device_name/$file_name/download
+        link=https://sourceforge.net/projects/blackiron/files/$device_name/$file_name/download
         cat >"$file_path".json <<JSON
 {
   "response": [

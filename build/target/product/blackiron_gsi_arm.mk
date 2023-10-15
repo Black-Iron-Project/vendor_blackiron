@@ -1,5 +1,5 @@
-# Copyright (C) 2021 The LineageOS Project
-# Copyright (C) 2021 DerpFest
+# Copyright (C) 2018-2020 The LineageOS Project
+# Copyright (C) 2021 Blackiron
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,13 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/sdk_phone_x86.mk)
+$(call inherit-product, device/generic/common/gsi_arm.mk)
 
-include vendor/derp/build/target/product/derp_generic_target.mk
+include vendor/blackiron/build/target/product/blackiron_generic_target.mk
 
-# Enable mainline checking
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
-# Overrides
-PRODUCT_NAME := derp_sdk_phone_x86
-PRODUCT_MODEL := LineageOS Android SDK built for x86
+TARGET_NO_KERNEL_OVERRIDE := true
+
+PRODUCT_NAME := blackiron_gsi_arm

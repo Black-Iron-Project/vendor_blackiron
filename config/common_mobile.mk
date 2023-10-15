@@ -1,5 +1,5 @@
-# Inherit common mobile DerpFest stuff
-$(call inherit-product, vendor/derp/config/common.mk)
+# Inherit common mobile Blackiron stuff
+$(call inherit-product, vendor/blackiron/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -8,20 +8,20 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 ifeq ($(PRODUCT_TYPE), go)
 PRODUCT_PACKAGES += \
-    DerpLauncherQuickStepGo
+    BlackironLauncherQuickStepGo
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    DerpLauncherQuickStepGo
+    BlackironLauncherQuickStepGo
 else
 PRODUCT_PACKAGES += \
-    DerpLauncherQuickStep
+    BlackironLauncherQuickStep
 
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    DerpLauncherQuickStep
+    BlackironLauncherQuickStep
 endif
 
 PRODUCT_PACKAGES += \
-    DerpLauncherOverlay
+    BlackironLauncherOverlay
 
 # Charger
 PRODUCT_PACKAGES += \

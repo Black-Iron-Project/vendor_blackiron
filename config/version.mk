@@ -1,5 +1,5 @@
 # Copyright (C) 2016-2017 AOSiP
-# Copyright (C) 2022 DerpFest
+# Copyright (C) 2022 Blackiron
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,33 +14,33 @@
 # limitations under the License.
 
 # Versioning System
-ifeq ($(DERP_VERSION_APPEND_TIME_OF_DAY),true)
+ifeq ($(BLACKIRON_VERSION_APPEND_TIME_OF_DAY),true)
     BUILD_DATE := $(shell date -u +%Y%m%d-%H%M%S)
 else
     BUILD_DATE := $(shell date -u +%Y%m%d)
 endif
 
-TARGET_PRODUCT_SHORT := $(subst derp_,,$(DERP_BUILDTYPE))
+TARGET_PRODUCT_SHORT := $(subst blackiron_,,$(BLACKIRON_BUILDTYPE))
 
-DERP_BUILDTYPE ?= Community
-DERP_STATUS := Alpha
-DERP_BUILD_VERSION := $(PLATFORM_VERSION)
-DERP_VERSION := $(DERP_BUILD_VERSION)-$(DERP_BUILDTYPE)-$(DERP_STATUS)-$(DERP_BUILD)-$(BUILD_DATE)
-ROM_FINGERPRINT := DerpFest/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
+BLACKIRON_BUILDTYPE ?= Community
+BLACKIRON_STATUS := Alpha
+BLACKIRON_BUILD_VERSION := $(PLATFORM_VERSION)
+BLACKIRON_VERSION := $(BLACKIRON_BUILD_VERSION)-$(BLACKIRON_BUILDTYPE)-$(BLACKIRON_STATUS)-$(BLACKIRON_BUILD)-$(BUILD_DATE)
+ROM_FINGERPRINT := Blackiron/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
 
-ifeq ($(DERP_BUILDTYPE), CI)
+ifeq ($(BLACKIRON_BUILDTYPE), CI)
     BUILD_KEYS := release-keys
 endif
 
 PRODUCT_SYSTEM_PROPERTIES += \
-  ro.derp.build.version=$(DERP_BUILD_VERSION) \
-  ro.derp.build.date=$(BUILD_DATE) \
-  ro.derp.buildtype=$(DERP_BUILDTYPE) \
-  ro.derp.fingerprint=$(ROM_FINGERPRINT) \
-  ro.derp.version=$(DERP_VERSION) \
-  ro.modversion=$(DERP_VERSION)
+  ro.blackiron.build.version=$(BLACKIRON_BUILD_VERSION) \
+  ro.blackiron.build.date=$(BUILD_DATE) \
+  ro.blackiron.buildtype=$(BLACKIRON_BUILDTYPE) \
+  ro.blackiron.fingerprint=$(ROM_FINGERPRINT) \
+  ro.blackiron.version=$(BLACKIRON_VERSION) \
+  ro.modversion=$(BLACKIRON_VERSION)
 
 ifneq ($(OVERRIDE_OTA_CHANNEL),)
 PRODUCT_SYSTEM_PROPERTIES += \
-    derp.updater.uri=$(OVERRIDE_OTA_CHANNEL)
+    blackiron.updater.uri=$(OVERRIDE_OTA_CHANNEL)
 endif

@@ -1,6 +1,6 @@
-# DerpFest packages
+# Blackiron packages
 PRODUCT_PACKAGES += \
-    DerpSetupWizard \
+    BlackironSetupWizard \
     Prospect \
     GameSpace \
     NetworkStackOverlay \
@@ -14,8 +14,8 @@ PRODUCT_PACKAGES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    DerpThemesStub \
-    DerpWalls \
+    BlackironThemesStub \
+    BlackironWalls \
     ThemePicker
 
 # Udfps
@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
     UdfpsResources
 endif
 
-# Extra tools in DerpFest
+# Extra tools in Blackiron
 PRODUCT_PACKAGES += \
     bash \
     curl \

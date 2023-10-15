@@ -2,11 +2,11 @@
 
 # Exports
 
-#. $ANDROID_BUILD_TOP/vendor/derp/tools/colors
+#. $ANDROID_BUILD_TOP/vendor/blackiron/tools/colors
 
 export Changelog=Changelog.txt
 
-DEVICE=$(echo $TARGET_PRODUCT | sed -e 's/derp_//g')
+DEVICE=$(echo $TARGET_PRODUCT | sed -e 's/blackiron_//g')
 
 if [ -f $Changelog ];
 then
