@@ -176,9 +176,9 @@ PRODUCT_PACKAGES += \
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
+    DerpLauncherQuickStep \
     SettingsGoogle \
-    SystemUIGoogle \
-    BlackironLauncher
+    SystemUIGoogle
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
@@ -206,7 +206,8 @@ include vendor/blackiron/config/version.mk
 
 # GApps
 WITH_GMS := true
-$(call inherit-product, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/google/gms/config.mk)
+$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 
 # Pixel Framework
 $(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
