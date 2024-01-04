@@ -175,13 +175,13 @@ PRODUCT_PACKAGES += \
     libtextclassifier_lang_id_model
 
 # SystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    DerpLauncherQuickStep \
-    SettingsGoogle \
-    SystemUIGoogle
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    DerpLauncherQuickStep \
+#    SettingsGoogle \
+#    SystemUIGoogle
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    dalvik.vm.systemuicompilerfilter=speed
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    dalvik.vm.systemuicompilerfilter=speed
 
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \

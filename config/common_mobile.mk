@@ -11,22 +11,22 @@ PRODUCT_PACKAGES += \
     Aperture \
     Eleven
 
-ifeq ($(PRODUCT_TYPE), go)
-PRODUCT_PACKAGES += \
-    BlackironLauncherQuickStepGo
+#ifeq ($(PRODUCT_TYPE), go)
+#PRODUCT_PACKAGES += \
+#    BlackironLauncherQuickStepGo
 
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    BlackironLauncherQuickStepGo
-else
-PRODUCT_PACKAGES += \
-    BlackironLauncherQuickStep
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    BlackironLauncherQuickStepGo
+#else
+#PRODUCT_PACKAGES += \
+#    BlackironLauncherQuickStep
 
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    BlackironLauncherQuickStep
-endif
-
-PRODUCT_PACKAGES += \
-    BlackironLauncherOverlay
+#PRODUCT_DEXPREOPT_SPEED_APPS += \
+#    BlackironLauncherQuickStep
+#endif
+#
+#PRODUCT_PACKAGES += \
+#    BlackironLauncherOverlay
 
 # Charger
 PRODUCT_PACKAGES += \
