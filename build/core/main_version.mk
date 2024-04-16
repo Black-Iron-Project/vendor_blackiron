@@ -9,7 +9,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.blackiron.build.version=$(LINEAGE_VERSION) \
     ro.blackiron.display.version=$(LINEAGE_DISPLAY_VERSION) \
     ro.blackiron.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(CR_VERSION) \
+    ro.modversion=$(BLKI_VERSION) \
     ro.blackironlegal.url=https://blackiron.net/legal.php
 
 # LineageOS Platform SDK Version
