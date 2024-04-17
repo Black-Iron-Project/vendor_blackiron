@@ -39,7 +39,7 @@ endif
 
 
 # Bootanimation
-$(call inherit-product, vendor/blackiron/config/bootanimation.mk)
+$(call inherit-product, vendor/lineage/config/bootanimation.mk)
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -136,11 +136,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
-    Updater
-
-PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/init/init.lineage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.lineage-updater.rc
+    LineageSettingsProvider
 
 # Config
 PRODUCT_PACKAGES += \
