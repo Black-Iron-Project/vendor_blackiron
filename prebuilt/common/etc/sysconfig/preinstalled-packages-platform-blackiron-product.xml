@@ -64,12 +64,6 @@
         <install-in user-type="PROFILE" />
         <do-not-install-in user-type="android.os.usertype.profile.CLONE" />
     </install-in-user-type>
-    <!-- Matlog -->
-    <install-in-user-type package="org.omnirom.logcat">
-        <install-in user-type="FULL" />
-        <install-in user-type="PROFILE" />
-        <do-not-install-in user-type="android.os.usertype.profile.CLONE" />
-    </install-in-user-type>
     <!-- Eleven (Music) -->
     <install-in-user-type package="org.lineageos.eleven">
         <install-in user-type="FULL" />
