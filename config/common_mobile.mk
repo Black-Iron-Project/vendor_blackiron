@@ -16,7 +16,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Apps
 PRODUCT_PACKAGES += \
     Backgrounds \
-    Glimpse
+    Glimpse \
+    LatinIME
 
 # Charger
 PRODUCT_PACKAGES += \
