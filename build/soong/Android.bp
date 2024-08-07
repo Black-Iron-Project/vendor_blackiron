@@ -50,14 +50,10 @@ cc_defaults {
     recovery_available: true,
 }
 
-cc_library_headers {
+kernel_headers {
     name: "generated_kernel_headers",
-    defaults: ["generated_kernel_header_defaults"],
-}
-
-cc_library_headers {
-    name: "qti_kernel_headers",
-    defaults: ["generated_kernel_header_defaults"],
+    vendor_available: true,
+    recovery_available: true,
 }
 
 // Target platform agnostic config modules
