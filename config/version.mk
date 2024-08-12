@@ -4,7 +4,7 @@ PRODUCT_VERSION_MINOR = 0
 BLACKIRON_BUILDTYPE ?= UNOFFICIAL
 
 # Increase BLKI Version with each major release.
-BLKI_VERSION := 4.6
+BLKI_VERSION := 4.7
 
 # Internal version
 LINEAGE_VERSION := Blackiron-$(BLKI_VERSION)_$(LINEAGE_BUILD)-$(PRODUCT_VERSION_MAJOR)-$(shell date +%Y%m%d)-$(shell date -u +%H)$(shell date -u +%M)-$(BLACKIRON_BUILDTYPE)
