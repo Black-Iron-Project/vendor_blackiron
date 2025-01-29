@@ -43,3 +43,11 @@ TARGET_SHIP_LEGACY_BOOT_ANIMAITON ?= false
 ifeq ($(TARGET_SHIP_LEGACY_BOOT_ANIMAITON),true)
 PRODUCT_COPY_FILES += vendor/blackiron/prebuilts/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
+
+# DeviceAsWebcam
+ifeq ($(TARGET_BUILD_DEVICE_AS_WEBCAM), true)
+    PRODUCT_PACKAGES += \
+        DeviceAsWebcam
+    PRODUCT_VENDOR_PROPERTIES += \
+        ro.usb.uvc.enabled=true
+endif
