@@ -22,21 +22,21 @@ BLACKIRON_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VER
 updatepackage: $(DEFAULT_GOAL) $(INTERNAL_UPDATE_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_UPDATE_PACKAGE_TARGET) $(BLACKIRON_TARGET_UPDATEPACKAGE)
 	@echo ""
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "  ____  __    ___    ___ __ __    __ ____    ___   __  __      " >&2
-	@echo " || )) ||    // \\  //   || //    || || \\  // \\  ||\ ||      " >&2
-	@echo " ||=)  ||    ||=|| ((    ||<<     || ||_// ((   )) ||\\||      " >&2
-	@echo " ||_)) ||__| || ||  \\__ || \\    || || \\  \\_//  || \||      " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "                                                               " >&2
-	@echo "****************************************************************" >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "  ______  _              _     _                   " >&2
+	@echo " (____  \| |            | |   | |                  " >&2
+	@echo "  ____)  ) | _____  ____| |  _| | ____ ___  ____   " >&2
+	@echo " |  __  (| |(____ |/ ___) |_/ ) |/ ___) _ \|  _ \  " >&2
+	@echo " | |__)  ) |/ ___ ( (___|  _ (| | |  | |_| | | | | " >&2
+	@echo " |______/ \_)_____|\____)_| \_)_|_|   \___/|_| |_| " >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "                                                   " >&2
+	@echo "***************************************************" >&2
 	@echo " Size            : $(shell du -hs $(BLACKIRON_TARGET_UPDATEPACKAGE) | awk '{print $$1}')"
 	@echo " Size(in bytes)  : $(shell wc -c $(BLACKIRON_TARGET_UPDATEPACKAGE) | awk '{print $$1}')"
 	@echo " Package Complete: $(BLACKIRON_TARGET_UPDATEPACKAGE)               " >&2
