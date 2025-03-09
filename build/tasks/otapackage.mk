@@ -17,13 +17,12 @@
 # -----------------------------------------------------------------
 # Blackiron OTA update package
 
-BLACKIRON_TARGET_PACKAGE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION)-ota.zip
+ROM_ZIP_FILE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
-bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLACKIRON_TARGET_PACKAGE)
+bacon: $(DEFAULT_GOAL)
 	@echo ""
 	@echo "                                                   " >&2
 	@echo "                                                   " >&2
@@ -40,8 +39,8 @@ bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo "                                                   " >&2
 	@echo "                                                   " >&2
 	@echo "***************************************************" >&2
-	@echo " Size            : $(shell du -hs $(BLACKIRON_TARGET_PACKAGE) | awk '{print $$1}')"
-	@echo " Size(in bytes)  : $(shell wc -c $(BLACKIRON_TARGET_PACKAGE) | awk '{print $$1}')"
-	@echo " Package Complete: $(BLACKIRON_TARGET_PACKAGE)     " >&2
+	@echo " Size            : $(shell du -hs $(ROM_ZIP_FILE) | awk '{print $$1}')"
+	@echo " Size(in bytes)  : $(shell wc -c $(ROM_ZIP_FILE) | awk '{print $$1}')"
+	@echo " Package Complete: $(ROM_ZIP_FILE)     " >&2
 	@echo "***************************************************" >&2
 	@echo ""
