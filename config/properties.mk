@@ -49,11 +49,16 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.device_power_mode=default
 
 # Blurs
-ifeq ($(TARGET_ENABLE_BLUR), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1
+TARGET_ENABLE_BLUR ?= true
+ifeq ($(TARGET_ENABLE_BLUR),true)
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.custom.blur.enable=true
+else
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.custom.blur.enable=false
 endif
+
+PRODUCT_SYSTEM_PROPERTIES += ro.surface_flinger.supports_background_blur=1
 
 # Freeform
 TARGET_DEVICE_IS_TABLET ?= false
