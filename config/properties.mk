@@ -112,18 +112,16 @@ PRODUCT_SYSTEM_PROPERTIES += \
 endif
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.pihooks_mainline_BRAND?=google \
-    persist.sys.pihooks_mainline_DEVICE?=caiman \
-    persist.sys.pihooks_mainline_MANUFACTURER?=Google \
-    persist.sys.pihooks_mainline_PRODUCT?=caiman \
-    persist.sys.pihooks_BRAND?=google \
     persist.sys.pihooks_MANUFACTURER?=Google \
-    persist.sys.pihooks_DEVICE?=tokay \
-    persist.sys.pihooks_PRODUCT?=tokay_beta \
-    persist.sys.pihooks_DEVICE_INITIAL_SDK_INT?=25 \
-    persist.sys.pihooks_SECURITY_PATCH?=2025-04-05 \
-    persist.sys.pihooks_ID?=BP22.250325.007
+    persist.sys.pihooks_BRAND?=google \
+    persist.sys.pihooks_PRODUCT?=panther_beta \
+    persist.sys.pihooks_DEVICE?=panther \
+    persist.sys.pihooks_ID?=BP31.250523.010 \
+    persist.sys.pihooks_RELEASE?=12 \
+    persist.sys.pihooks_SECURITY_PATCH?=2025-06-05 \
+    persist.sys.pihooks_DEVICE_INITIAL_SDK_INT?=21 \
+    persist.sys.pihooks_SDK_INT?=32
 
-PIHOOKS_BUILD_GMS_FINGERPRINT := google/oriole_beta/oriole:16/BP22.250325.007/13352765:user/release-keys
-PIHOOKS_BUILD_FINGERPRINT := google/caiman/caiman:14/AD1A.240530.047.U1/12150698:user/release-keys
-PIHOOKS_MODEL_SPOOF := Pixel 6
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PihooksGmsFp="google/panther_beta/panther:16/BP31.250523.010/13667654:user/release-keys" \
+    PihooksGmsModel="Pixel 7"
