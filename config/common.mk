@@ -7,6 +7,9 @@ $(call inherit-product, vendor/blackiron/config/bootanimation.mk)
 # Certification
 $(call inherit-product-if-exists, vendor/certification/config.mk)
 
+# Allow vendor prebuilt repos to exclude themselves from bp scanning
+-include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
+
 PRODUCT_BRAND ?= BlackironProject
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
