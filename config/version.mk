@@ -46,3 +46,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.blackiron.battery?=$(BLACKIRON_BATTERY) \
     ro.blackiron.display_resolution?=$(BLACKIRON_DISPLAY) \
     ro.blackiron.maintainer=$(BLACKIRON_MAINTAINER)
+
+# Pop-Up View
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.rising.feature.pop_up_view=true
