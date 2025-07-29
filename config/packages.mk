@@ -12,9 +12,7 @@ PRODUCT_PACKAGES += \
     LMOFreeform \
     LMOFreeformSidebar \
     OmniJaws \
-    Updater \
-    GameSpace \
-    OmniStyle
+    Updater
 
 ifneq ($(WITH_GMS),true)
 PRODUCT_PACKAGES += \
