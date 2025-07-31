@@ -1,5 +1,5 @@
-# Copyright (C) 2017 Unlegacy-Android
-# Copyright (C) 2017,2020 The LineageOS Project
+# Copyright (C) 2022 PixysOS Project
+# Copyright (C) 2023 Blackiron Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,19 +14,13 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Blackiron OTA update package
+# Blackiron fastboot update package
 
-BLACKIRON_TARGET_PACKAGE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION).zip
+BLACKIRON_TARGET_UPDATEPACKAGE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION)-fastboot.zip
 
-SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
-
-$(BLACKIRON_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLACKIRON_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(BLACKIRON_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLACKIRON_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(BLACKIRON_TARGET_PACKAGE)" >&2
-
-.PHONY: blackiron
-blackiron: $(BLACKIRON_TARGET_PACKAGE) $(DEFAULT_GOAL)
+.PHONY: updatepackage dinner
+updatepackage: $(DEFAULT_GOAL) $(INTERNAL_UPDATE_PACKAGE_TARGET)
+	$(hide) ln -f $(INTERNAL_UPDATE_PACKAGE_TARGET) $(BLACKIRON_TARGET_UPDATEPACKAGE)
 	@echo ""
 	@echo "                                                   " >&2
 	@echo "                                                   " >&2
@@ -43,9 +37,9 @@ blackiron: $(BLACKIRON_TARGET_PACKAGE) $(DEFAULT_GOAL)
 	@echo "                                                   " >&2
 	@echo "                                                   " >&2
 	@echo "***************************************************" >&2
-	@echo " Size            : $(shell du -hs $(ROM_ZIP_FILE) | awk '{print $$1}')"
-	@echo " Size(in bytes)  : $(shell wc -c $(ROM_ZIP_FILE) | awk '{print $$1}')"
-	@echo " Package Complete: $(ROM_ZIP_FILE)     " >&2
+	@echo " Size            : $(shell du -hs $(BLACKIRON_TARGET_UPDATEPACKAGE) | awk '{print $$1}')"
+	@echo " Size(in bytes)  : $(shell wc -c $(BLACKIRON_TARGET_UPDATEPACKAGE) | awk '{print $$1}')"
+	@echo " Package Complete: $(BLACKIRON_TARGET_UPDATEPACKAGE)               " >&2
 	@echo "****************************************************************" >&2
 	@echo ""
-dinner: blackiron
+dinner: updatepackage

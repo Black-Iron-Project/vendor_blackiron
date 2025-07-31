@@ -1,5 +1,6 @@
 # Copyright (C) 2017 Unlegacy-Android
 # Copyright (C) 2017,2020 The LineageOS Project
+# Copyright (C) 2024 Blackiron
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,17 +17,12 @@
 # -----------------------------------------------------------------
 # Blackiron OTA update package
 
-BLACKIRON_TARGET_PACKAGE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION).zip
+ROM_ZIP_FILE := $(PRODUCT_OUT)/Blackiron-$(BLACKIRON_BUILD_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
-$(BLACKIRON_TARGET_PACKAGE): $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLACKIRON_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(BLACKIRON_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLACKIRON_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(BLACKIRON_TARGET_PACKAGE)" >&2
-
-.PHONY: blackiron
-blackiron: $(BLACKIRON_TARGET_PACKAGE) $(DEFAULT_GOAL)
+.PHONY: bacon
+bacon: $(DEFAULT_GOAL)
 	@echo ""
 	@echo "                                                   " >&2
 	@echo "                                                   " >&2
@@ -46,6 +42,5 @@ blackiron: $(BLACKIRON_TARGET_PACKAGE) $(DEFAULT_GOAL)
 	@echo " Size            : $(shell du -hs $(ROM_ZIP_FILE) | awk '{print $$1}')"
 	@echo " Size(in bytes)  : $(shell wc -c $(ROM_ZIP_FILE) | awk '{print $$1}')"
 	@echo " Package Complete: $(ROM_ZIP_FILE)     " >&2
-	@echo "****************************************************************" >&2
+	@echo "***************************************************" >&2
 	@echo ""
-dinner: blackiron
