@@ -1,7 +1,7 @@
 -include vendor/addons/config.mk
 WITH_GMS ?= false
 ifeq ($(WITH_GMS),true)
--include vendor/gapps/arm64/arm64-vendor.mk
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 endif
 include vendor/blackiron/config/properties.mk
 include vendor/blackiron/config/packages.mk
