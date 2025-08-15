@@ -23,6 +23,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 # System overlays
 PRODUCT_PACKAGES += \
     AndroidOverlay \
-    Launcher3Overlay \
+#    Launcher3Overlay \
     SettingsOverlay \
     SystemUIOverlay
