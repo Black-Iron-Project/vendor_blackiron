@@ -41,9 +41,9 @@ PRODUCT_COPY_FILES += \
     vendor/blackiron/prebuilts/apn/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 endif
 
-TARGET_SHIP_LEGACY_BOOT_ANIMAITON ?= false
-ifeq ($(TARGET_SHIP_LEGACY_BOOT_ANIMAITON),true)
-PRODUCT_COPY_FILES += vendor/blackiron/prebuilts/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+TARGET_SHIP_LEGACY_BOOT_ANIMATION ?= false
+ifeq ($(TARGET_SHIP_LEGACY_BOOT_ANIMATION),true)
+PRODUCT_COPY_FILES += vendor/blackiron/prebuilts/bootanimation/bootanimation_blackiron.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
 # DeviceAsWebcam
