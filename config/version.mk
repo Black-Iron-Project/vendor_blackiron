@@ -16,13 +16,9 @@ BLACKIRON_BUILD_DATE := $(shell date +%Y%m%d)-$(shell date -u +%H)$(shell date -
 CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 
 ifeq ($(WITH_GMS), true)
-	ifeq ($(TARGET_CORE_GMS), true)
-#    	BLACKIRON_PACKAGE_TYPE ?= CORE
-#	else 
     	BLACKIRON_PACKAGE_TYPE ?= GAPPS
-	endif
 else
-    BLACKIRON_PACKAGE_TYPE ?= VANILLA
+        BLACKIRON_PACKAGE_TYPE ?= VANILLA
 endif
 
 # Build version
